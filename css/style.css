@@ -654,21 +654,28 @@
         height: 40px; /* Ukuran logo lebih kecil di layar kecil */
     }
 }
-
 .company-info {
-    list-style-type: none; /* Menghilangkan bullet point */
+    list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.company-info li {
-    margin-bottom: 10px; /* Jarak antar item */
-}
-
-.company-info li strong {
+  }
+  
+  .company-info li {
+    display: flex;
+    align-items: flex-start; /* Membuat label dan konten sejajar di awal */
+    margin-bottom: 10px;
+  }
+  
+  .company-info strong {
+    min-width: 300px; /* Lebar tetap untuk label */
     display: inline-block;
-    width: 300px; /* Menentukan lebar label */
-}
+    font-weight: bold;
+  }
+  
+  .company-info span {
+    flex: 1; /* Memastikan konten mengikuti label */
+  }
+  
 
 .contact-image-frame {
     width: 100%;
