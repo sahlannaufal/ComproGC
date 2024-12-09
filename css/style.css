@@ -492,7 +492,8 @@
 
 /* Set the maximum height for the logo */
 .navbar-logo {
-    max-height: 50px; /* Adjust to the desired size */
+    max-height: 70px; /* Adjust to the desired size */
+    padding-top: 4px;
     width: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensure the logo fits within the area */
 }
@@ -713,4 +714,35 @@ h5 {
     background-color: transparent; /* Warna transparan */
     border: 0px dashed #ccc; /* Border untuk referensi visual */
     margin: 88px 0; /* Jarak atas-bawah */
+}
+
+.container-xxl .img-fluid {
+    object-fit: cover;
+    max-height: 300px; /* Atur tinggi maksimal gambar */
+}
+.container-xxl .row.g-3 img {
+    width: 100%; /* Sesuaikan gambar agar responsif */
+    height: auto; /* Pastikan proporsi tetap terjaga */
+}
+
+.certification-card img {
+    /* width: 320px; Set width */
+    height: 444px; /* Set height */
+    object-fit: cover; /* Maintain aspect ratio while cropping excess */
+    margin: 0 auto; /* Center align the image */
+    display: block;
+}
+.certification-card {
+    text-align: center;
+}
+.certification-card h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+.certification-card p {
+    font-size: 14px;
+    color: #6c757d;
+}
+.shadow {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
