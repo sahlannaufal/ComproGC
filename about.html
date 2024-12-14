@@ -30,93 +30,6 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- <style>
-
-
-        .page-title {
-            text-align: center;
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: bold;
-        }
-
-        .philosophy-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .philosophy-card {
-            background-color: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .philosophy-card:hover {
-            transform: scale(1.05);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center; /* Vertical alignment */
-            margin-bottom: 1rem;
-            gap: 1rem; /* Space between icon and text */
-        }
-
-        .card-header i {
-            font-size: 2.5rem;
-            display: flex; /* Ensure icon is centered */
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-header h2 {
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            line-height: 1; /* Remove any extra line height */
-        }
-
-        .card-content ul {
-            list-style-type: none;
-            color: #555;
-        }
-
-        .card-content li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .card-content li::before {
-            content: '•';
-            color: var(--primary-green);
-            position: absolute;
-            left: 0;
-        }
-
-        .operation-philosophy {
-            background-color: #2F3192;
-            color: white;
-            text-align: center;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .operation-philosophy i {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .philosophy-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style> -->
 </head>
 
 <body>
@@ -691,34 +604,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <script>
-        // Optional: Add some simple animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.philosophy-card, .operation-philosophy');
-            
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                observer.observe(card);
-            });
-        });
-    </script>
 </body>
 
 </html>
