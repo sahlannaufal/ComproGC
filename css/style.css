@@ -620,16 +620,16 @@
     align-items: center;
     justify-content: flex-start; /* Menggunakan flex-start agar logo saling berdempetan */
     width: max-content; /* Memastikan lebar kontainer cukup untuk semua logo tanpa spasi berlebih */
-    animation: slide 30s linear infinite;
+    animation: slide 40s linear infinite;
 }
 
 .partner-logo {
-    height: 60px; /* Ukuran logo */
+    height: 100px; /* Ukuran logo */
     width: auto;
     filter: grayscale(100%);
     opacity: 0.6;
     transition: all 0.3s ease;
-    margin-right: 15px; /* Mengurangi jarak antar logo */
+    margin-right: 20px; /* Mengurangi jarak antar logo */
 }
 
 .partner-logo:last-child {
@@ -666,33 +666,34 @@
     align-items: flex-start; /* Membuat label dan konten sejajar di awal */
     margin-bottom: 10px;
   }
-  
-  .company-info strong {
-    min-width: 300px; /* Lebar tetap untuk label */
-    display: inline-block;
-    font-weight: bold;
-  }
-  
-  .company-info span {
-    flex: 1; /* Memastikan konten mengikuti label */
-  }
-  
-
-.contact-image-frame {
-    width: 100%;
-    height: 200px; /* Sesuaikan tinggi gambar */
-    overflow: hidden;
+  .contact-image-frame {
+    width: 150px; /* Sesuaikan ukuran yang diinginkan */
+    height: 100px; /* Sesuaikan ukuran yang diinginkan */
+    overflow: hidden; /* Potong bagian gambar yang lebih besar dari frame */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: #f9f9f9; /* Tambahkan warna latar opsional */
+    border-radius: 5px; /* Tambahkan radius untuk estetika */
 }
 
 .contact-image-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Pastikan gambar proporsional */
+    width: 100%; /* Buat gambar memenuhi frame secara horizontal */
+    height: 100%; /* Buat gambar memenuhi frame secara vertikal */
+    object-fit: cover; /* Pastikan gambar memenuhi frame tanpa merusak proporsi */
+    border-radius: 5px; /* Tambahkan radius agar serasi dengan frame */
+}
+  .image-container {
+    width: 200px;  /* Atur lebar tetap */
+    height: 150px; /* Atur tinggi tetap */
+    overflow: hidden; /* Memastikan gambar tidak keluar dari kontainer */
 }
 
+.object-fit-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa merubah rasio aspek */
+}
 .vr {
     width: 2px;
     background-color: #ddd; /* Warna garis pembatas */
@@ -761,4 +762,202 @@ h5 {
   .contact-info div {
     line-height: 1.5;
   }
+
   
+  
+
+  .page-title {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.philosophy-card, .operation-philosophy {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.philosophy-card.show, .operation-philosophy.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.philosophy-card:hover, .operation-philosophy:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.card-header i {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header h2 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.card-content ul {
+    list-style-type: none;
+    color: #555;
+}
+
+.card-content li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.card-content li::before {
+    content: '•';
+    color: var(--primary-green);
+    position: absolute;
+    left: 0;
+}
+
+.operation-philosophy-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.operation-philosophy {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+    .operation-philosophy {
+        width: 100%;
+    }
+}
+
+
+/* team */
+
+.team-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.team-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0ea5e9, #3b82f6);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card:hover:before {
+    opacity: 0.9;
+}
+
+.team-content {
+    padding: 1.5rem;
+}
+
+.team-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.team-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.1);
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-info h5 {
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-info h5 {
+    color: #ffffff;
+}
+
+.team-description {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-description {
+    opacity: 1;
+    transform: translateY(0);
+    color: #ffffff;
+}
+/* 
+.text-primary {
+    color: #0ea5e9 !important;
+} */
+
+.team-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover::after {
+    width: 80%;
+}

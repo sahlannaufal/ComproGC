@@ -29,6 +29,94 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- <style>
+
+
+        .page-title {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .philosophy-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center; /* Vertical alignment */
+            margin-bottom: 1rem;
+            gap: 1rem; /* Space between icon and text */
+        }
+
+        .card-header i {
+            font-size: 2.5rem;
+            display: flex; /* Ensure icon is centered */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-header h2 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            line-height: 1; /* Remove any extra line height */
+        }
+
+        .card-content ul {
+            list-style-type: none;
+            color: #555;
+        }
+
+        .card-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .card-content li::before {
+            content: '•';
+            color: var(--primary-green);
+            position: absolute;
+            left: 0;
+        }
+
+        .operation-philosophy {
+            background-color: #2F3192;
+            color: white;
+            text-align: center;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .operation-philosophy i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style> -->
 </head>
 
 <body>
@@ -199,6 +287,92 @@
 </div>
 <!-- Fact End -->
 
+ <!-- Philosphy -->
+ <div class="container">
+    <h1 class="mb-5 text-center">Our Guiding Philosophies</h1>
+    <!-- <h1 class="page-title">Our Guiding Philosophies</h1> -->
+
+    <div class="philosophy-grid">
+        <!-- Core Philosophy -->
+        <div class="philosophy-card">
+            <div class="card-header">
+                <i class="fas fa-star" style="color: #FFD700;"></i>
+                <h2 style="padding-top: 10px;">Core Philosophy</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>Quality Oriented: Highest standards at every step</li>
+                    <li>Customer Satisfaction: Our ultimate priority</li>
+                    <li>Employee Development: Continuous growth and empowerment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quality Philosophy -->
+        <div class="philosophy-card">
+            <div class="card-header">
+                <i class="fas fa-shield-alt" style="color: #28a745;"></i>
+                <h2 style="padding-top: 10px;">Quality Philosophy</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>Concept: Proactively meet demands and prevent losses</li>
+                    <li>Goal: Achieve the highest level of excellence</li>
+                    <li>Practice: Completing projects on time with optimal methods</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Management Philosophy -->
+        <div class="philosophy-card">
+            <div class="card-header">
+                <i class="fas fa-users" style="color: #6f42c1;"></i>
+                <h2 style="padding-top: 10px;">Management Philosophy</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>People-Centered Approach</li>
+                    <li>Empowering Self-Management</li>
+                    <li>Nurturing Individual and Collective Potential</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Services Philosophy -->
+        <div class="philosophy-card">
+            <div class="card-header">
+                <i class="fas fa-trophy" style="color: #dc3545;"></i>
+                <h2 style="padding-top: 10px;">Services Philosophy</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>Concept: Self-contribution and pursuit of excellence</li>
+                    <li>Target: Lifelong Customer Commitment</li>
+                    <li>Practice: Clear needs definition and complete fulfillment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Operation Philosophy -->
+    <div class="operation-philosophy-wrapper">
+        <div class="operation-philosophy philosophy-card">
+            <div class="card-header">
+                <i class="fas fa-bullseye" style="color: #2F3192;"></i>
+                <h2 style="padding-top: 10px;">Operation Philosophy</h2>
+            </div>
+            <div class="card-content">
+                <ul>
+                    <li>Customer relationships are the foundational cornerstone of our company's growth and success.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+<!-- Philosphy -->
+
     <!-- Feature Start -->
     <div class="container-fluid overflow-hidden py-5 px-lg-0">
         <div class="container feature py-5 px-lg-0">
@@ -253,9 +427,121 @@
     </div>
     <!-- Feature End -->
 
+    <div class="container-xxl">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary fw-bold text-uppercase position-relative d-inline-block">
+                    Our Team
+                    <!-- <div class="position-absolute start-0 bottom-0 w-100" style="height: 2px; background: linear-gradient(90deg, transparent, #0ea5e9, transparent);"></div> -->
+                </h6>
+                <h1 class="display-5 mb-0 mt-2">Expert Team Members</h1>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-image">
+                                <img class="img-fluid" src="img/team/officeTeam.jpeg" alt="Office Team">
+                            </div>
+                            <div class="team-info">
+                                <h5>Office Team</h5>
+                                <p class="team-description">Professional administrative support ensuring smooth operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-image">
+                                <img class="img-fluid" src="img/team/engineer1.png" alt="Office Team">
+                            </div>
+                            <div class="team-info">
+                                <h5>Engineering Team</h5>
+                                <p class="team-description">Professional administrative support ensuring smooth operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-image">
+                                <img class="img-fluid" src="img/team/purchasing1.png" alt="Office Team">
+                            </div>
+                            <div class="team-info">
+                                <h5>Purchasing Team</h5>
+                                <p class="team-description">Professional administrative support ensuring smooth operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-image">
+                                <img class="img-fluid" src="img/team/finance1.png" alt="Office Team">
+                            </div>
+                            <div class="team-info">
+                                <h5>Finance Team</h5>
+                                <p class="team-description">Professional administrative support ensuring smooth operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-image">
+                                <img class="img-fluid" src="img/team/HRD2.png" alt="Office Team">
+                            </div>
+                            <div class="team-info">
+                                <h5>HRD & GA Team</h5>
+                                <p class="team-description">Professional administrative support ensuring smooth operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-image">
+                                <img class="img-fluid" src="img/team/office prod ware1.png" alt="Office Team">
+                            </div>
+                            <div class="team-info">
+                                <h5>Warehouse & Production Team</h5>
+                                <p class="team-description">Professional administrative support ensuring smooth operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-image">
+                                <img class="img-fluid" src="img/team/marketing1.png" alt="Office Team">
+                            </div>
+                            <div class="team-info">
+                                <h5>Marketing Team</h5>
+                                <p class="team-description">Professional administrative support ensuring smooth operations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat similar structure for other team cards -->
+            </div>
+        </div>
+    </div>
 
    <!-- Team Start -->
-<div class="container-xxl py-5">
+<!-- <div class="container-xxl py-5">
     <div class="container py-5">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="text-secondary text-uppercase">Our Team</h6>
@@ -320,7 +606,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Team End n -->
 
 
@@ -373,8 +659,7 @@
                         <a class="btn btn-link text-light text-start ps-0" href="about.html">About Us</a>
                         <a class="btn btn-link text-light text-start ps-0" href="contact.html">Contact Us</a>
                         <a class="btn btn-link text-light text-start ps-0" href="service.html">Products</a>
-                        <a class="btn btn-link text-light text-start ps-0" href="service.html">Services</a>
-                        <a class="btn btn-link text-light text-start ps-0" href="service.html">Projects</a>
+                       
                     </div>
                 </div>
             </div>
@@ -405,6 +690,35 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        // Optional: Add some simple animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.philosophy-card, .operation-philosophy');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 
 </html>
