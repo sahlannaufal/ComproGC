@@ -358,6 +358,18 @@
     background: var(--secondary);
 }
 
+.testimonial-item img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: unset !important;
+  }
+
+  .testimonial-item {
+    display: flex;
+    flex-direction: column; /* Atur tata letak vertikal */
+    align-items: center; /* Pusatkan konten */
+    text-align: center; /* Pastikan teks di tengah */
+}
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item {
@@ -656,15 +668,26 @@
     }
 }
 .company-info {
-    list-style: none;
+    list-style: none; /* Hilangkan bullet points */
     padding: 0;
     margin: 0;
   }
   
   .company-info li {
     display: flex;
-    align-items: flex-start; /* Membuat label dan konten sejajar di awal */
-    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Jarak antar item */
+  }
+  
+  .company-info li strong {
+    width: 280px; /* Lebar tetap untuk label */
+    text-align: left; /* Sejajarkan teks label ke kiri */
+  }
+  
+  .company-info li span {
+    flex: 1; /* Isi span akan memanfaatkan sisa ruang */
+    text-align: left; /* Sejajarkan teks span ke kiri */
   }
   .contact-image-frame {
     width: 150px; /* Sesuaikan ukuran yang diinginkan */
@@ -960,4 +983,37 @@ h5 {
 
 .team-card:hover::after {
     width: 80%;
+}
+
+/* Gallery Grid Styling */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Spasi antar gambar */
+    padding: 10px;
+}
+
+/* Individual Gallery Item */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px; /* Sudut melengkung agar tidak kaku */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Efek zoom lembut saat hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Tinggi tetap untuk memastikan ukuran seragam */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Sedikit zoom pada gambar saat hover */
 }
