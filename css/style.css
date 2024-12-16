@@ -70,15 +70,16 @@
     justify-content: center;
     font-weight: normal;
 }
-
 /*** Navbar ***/
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.sticky-top.scrolled,
+.navbar.sticky-top:hover {
+    background-color: white !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -91,6 +92,11 @@
     outline: none;
 }
 
+.navbar.scrolled .navbar-light .navbar-nav .nav-link,
+.navbar:hover .navbar-light .navbar-nav .nav-link {
+    color: var(--dark);
+}
+
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--primary);
@@ -100,6 +106,7 @@
     .navbar-light .navbar-nav .nav-link  {
         margin-right: 0;
         padding: 10px 0;
+        color: var(--dark);
     }
 
     .navbar-light .navbar-nav {
@@ -113,13 +120,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
     font-weight: 500;
-}
-
-.navbar-light.sticky-top {
-    top: -100px;
-    transition: .5s;
 }
 
 @media (min-width: 992px) {
@@ -134,6 +135,11 @@
         transition: .5s;
     }
 
+    .navbar.scrolled .navbar-light .navbar-nav .nav-link::before,
+    .navbar:hover .navbar-light .navbar-nav .nav-link::before {
+        background: var(--primary);
+    }
+
     .navbar-light .navbar-nav .nav-link:hover::before,
     .navbar-light .navbar-nav .nav-link.active::before {
         width: 100%;
@@ -143,23 +149,35 @@
     .navbar-light .navbar-nav .nav-link.nav-contact::before {
         display: none;
     }
+}
 
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-    }
+.container-fluid.p-0.pb-5 {
+    margin-top: -75px; /* Sesuaikan dengan tinggi navbar */
+}
 
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
+/* Untuk navbar transparan */
+.navbar.sticky-top .navbar-light .navbar-nav .nav-link {
+    color: #FFFFFF; /* Putih saat navbar transparan */
+}
+
+/* Saat navbar di-hover */
+.navbar:hover .navbar-light .navbar-nav .nav-link:not(.active) {
+    color: var(--dark); /* Berubah menjadi warna gelap untuk link yang tidak aktif */
+}
+
+/* Saat navbar di-scroll */
+.navbar.scrolled .navbar-light .navbar-nav .nav-link:not(.active) {
+    color: var(--dark); /* Berubah menjadi warna gelap untuk link yang tidak aktif */
+}
+
+/* Tetap mempertahankan warna primary untuk link aktif */
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+/* Tambahan hover effect */
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--primary);
 }
 
 
@@ -221,8 +239,9 @@
 }
 
 .page-header {
-    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/20.JPG) center center no-repeat;
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/navbar4.JPG) center center no-repeat;
     background-size: cover;
+    margin-top: -75px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -502,6 +521,14 @@
     background: rgba(6, 3, 21, 0.5); /* Dark semi-transparent background */
 }
 
+.navbar-logo-transparan {
+    max-height: 280px; /* Adjust to the desired size */
+    padding-top: 4px;
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the logo fits within the area */
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove any borders if present */
+}
 /* Set the maximum height for the logo */
 .navbar-logo {
     max-height: 70px; /* Adjust to the desired size */
@@ -1050,3 +1077,4 @@ h5 {
     font-weight: bold;
     margin: 0;
 }
+

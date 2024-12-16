@@ -156,6 +156,31 @@
         });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    
+        // Tambahkan event listener untuk hover
+        navbar.addEventListener('mouseenter', function() {
+            if (window.scrollY <= 50) {
+                navbar.classList.add('scrolled');
+            }
+        });
+    
+        navbar.addEventListener('mouseleave', function() {
+            if (window.scrollY <= 50) {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    });
+
     
 })(jQuery);
 
