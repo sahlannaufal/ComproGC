@@ -1078,3 +1078,13 @@ h5 {
     margin: 0;
 }
 
+.star-animation {
+    opacity: 0;
+    animation: fadeInStar 2.0s forwards;
+}
+
+@keyframes fadeInStar {
+    to {
+        opacity: 1;
+    }
+}
