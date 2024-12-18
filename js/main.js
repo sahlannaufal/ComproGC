@@ -181,6 +181,53 @@
         });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        const navLinks = navbar.querySelectorAll('.nav-link');
     
+        // Fungsi untuk mengubah warna navbar
+        function updateNavbarColor() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+    
+        // Tambahkan event listener untuk scroll
+        window.addEventListener('scroll', updateNavbarColor);
+    
+        // Tambahkan event listener untuk hover
+        navbar.addEventListener('mouseenter', function() {
+            navbar.classList.add('hovered');
+        });
+    
+        navbar.addEventListener('mouseleave', function() {
+            navbar.classList.remove('hovered');
+        });
+    });
+    
+    // Tambahkan event listener untuk hover pada nav-link
+    $(document).ready(function() {
+        $('.nav-link').hover(
+            function() {
+                // Saat mouse enter
+                if (!$(this).hasClass('active')) {
+                    $(this).css('color', '#28a745');
+                }
+            },
+            function() {
+                // Saat mouse leave
+                if (!$(this).hasClass('active')) {
+                    // Reset warna sesuai kondisi navbar
+                    if ($('.navbar').hasClass('scrolled') || $('.navbar').hasClass('hovered')) {
+                        $(this).css('color', 'var(--dark)');
+                    } else {
+                        $(this).css('color', '#FFFFFF');
+                    }
+                }
+            }
+        );
+    });
 })(jQuery);
 

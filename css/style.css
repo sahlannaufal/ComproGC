@@ -90,6 +90,8 @@
     font-size: 15px;
     text-transform: uppercase;
     outline: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 .navbar.scrolled .navbar-light .navbar-nav .nav-link,
@@ -117,10 +119,6 @@
 .navbar-light .navbar-brand,
 .navbar-light a.btn {
     height: 75px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    font-weight: 500;
 }
 
 @media (min-width: 992px) {
@@ -180,6 +178,40 @@
     color: var(--primary);
 }
 
+/* Saat navbar di-hover atau di-scroll */
+.navbar.scrolled .navbar-nav .nav-link:not(.active),
+.navbar.hovered .navbar-nav .nav-link:not(.active) {
+    color: var(--dark) !important;
+}
+
+/* Navbar transparan */
+.navbar .navbar-nav .nav-link {
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+/* Link aktif */
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+/* Efek hover pada link */
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--primary) !important;
+}
+
+/* Pastikan efek hover berlaku untuk semua kondisi navbar */
+.navbar .navbar-nav .nav-link:hover {
+    color: #28a745 !important; /* Hijau */
+    transition: color 0.3s ease;
+}
+
+/* Tambahan untuk memastikan hover effect pada berbagai kondisi navbar */
+.navbar.sticky-top .navbar-nav .nav-link:hover,
+.navbar.scrolled .navbar-nav .nav-link:hover,
+.navbar.hovered .navbar-nav .nav-link:hover {
+    color: #28a745 !important;
+}
 
 /*** Header ***/
 @media (max-width: 768px) {
@@ -242,6 +274,18 @@
     background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/navbar4.JPG) center center no-repeat;
     background-size: cover;
     margin-top: -75px;
+    height: 300px; 
+}
+@media (max-width: 768px) {
+    .page-header {
+        height: 200px; /* Untuk layar lebih kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        height: 100px; /* Untuk layar sangat kecil */
+    }
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
