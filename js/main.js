@@ -156,26 +156,50 @@
         });
     });
 
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const navbar = document.querySelector('.navbar');
+        
+    //     window.addEventListener('scroll', function() {
+    //         if (window.scrollY > 50) {
+    //             navbar.classList.add('scrolled');
+    //         } else {
+    //             navbar.classList.remove('scrolled');
+    //         }
+    //     });
+    
+    //     // Tambahkan event listener untuk hover
+    //     navbar.addEventListener('mouseenter', function() {
+    //         if (window.scrollY <= 50) {
+    //             navbar.classList.add('scrolled');
+    //         }
+    //     });
+    
+    //     navbar.addEventListener('mouseleave', function() {
+    //         if (window.scrollY <= 50) {
+    //             navbar.classList.remove('scrolled');
+    //         }
+    //     });
+    // });
     document.addEventListener('DOMContentLoaded', function() {
         const navbar = document.querySelector('.navbar');
         
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
+            // Mengubah dari 50 menjadi lebih kecil, misalnya 20
+            if (window.scrollY > 20) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         });
     
-        // Tambahkan event listener untuk hover
         navbar.addEventListener('mouseenter', function() {
-            if (window.scrollY <= 50) {
+            if (window.scrollY <= 20) { // Sesuaikan juga di sini
                 navbar.classList.add('scrolled');
             }
         });
     
         navbar.addEventListener('mouseleave', function() {
-            if (window.scrollY <= 50) {
+            if (window.scrollY <= 20) { // Sesuaikan juga di sini
                 navbar.classList.remove('scrolled');
             }
         });
@@ -187,7 +211,7 @@
     
         // Fungsi untuk mengubah warna navbar
         function updateNavbarColor() {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 20) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
@@ -207,27 +231,41 @@
         });
     });
     
-    // Tambahkan event listener untuk hover pada nav-link
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.nav-link').hover(
-            function() {
-                // Saat mouse enter
+            function () {
                 if (!$(this).hasClass('active')) {
-                    $(this).css('color', '#28a745');
+                    $(this).data('original-color', $(this).css('color'));
+                    if ($('.navbar').hasClass('scrolled') || $('.navbar').hasClass('hovered')) {
+                        $(this).css('color', '#28a745');
+                    } else {
+                        $(this).css('color', '#28a745');
+                    }
                 }
             },
-            function() {
-                // Saat mouse leave
+            function () {
                 if (!$(this).hasClass('active')) {
-                    // Reset warna sesuai kondisi navbar
-                    if ($('.navbar').hasClass('scrolled') || $('.navbar').hasClass('hovered')) {
-                        $(this).css('color', 'var(--dark)');
-                    } else {
-                        $(this).css('color', '#FFFFFF');
-                    }
+                    $(this).css('color', $(this).data('original-color'));
                 }
             }
         );
+    
+        // Pastikan link aktif selalu hijau saat inisialisasi
+        $('.nav-link.active').css('color', '#28a745');
+    
+        // Event handler untuk klik
+        $('.nav-link').on('click', function () {
+            $('.nav-link').removeClass('active').each(function() {
+                $(this).css('color', $(this).data('original-color'));
+            });
+            $(this).addClass('active').css('color', '#28a745');
+        });
+        
+        // Tambahan: memastikan warna aktif tetap terjaga saat scroll
+        $(window).scroll(function() {
+            $('.nav-link.active').css('color', '#28a745');
+        });
     });
+    
 })(jQuery);
 

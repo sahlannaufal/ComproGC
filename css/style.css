@@ -206,6 +206,30 @@
     transition: color 0.3s ease;
 }
 
+/* Pastikan warna default tetap putih untuk navbar transparan */
+.navbar:not(.scrolled):not(.hovered) .navbar-nav .nav-link {
+    color: #FFFFFF !important;
+}
+
+/* Efek hover hijau */
+.navbar .navbar-nav .nav-link:hover:not(.active) {
+    color: #28a745 !important;
+    transition: color 0.3s ease;
+}
+
+/* Aturan khusus untuk link aktif dengan spesifisitas tinggi */
+.navbar .navbar-nav .nav-link.active,
+.navbar:not(.scrolled):not(.hovered) .navbar-nav .nav-link.active,
+.navbar.scrolled .navbar-nav .nav-link.active,
+.navbar.hovered .navbar-nav .nav-link.active {
+    color: #28a745 !important;
+}
+
+/* Pastikan link aktif tetap hijau bahkan dalam kondisi navbar transparan */
+.navbar-light .navbar-nav .nav-link.active {
+    color: #28a745 !important;
+}
+
 /* Tambahan untuk memastikan hover effect pada berbagai kondisi navbar */
 .navbar.sticky-top .navbar-nav .nav-link:hover,
 .navbar.scrolled .navbar-nav .nav-link:hover,
